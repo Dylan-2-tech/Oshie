@@ -1,18 +1,59 @@
 
 #coursContainer{
-    background-color: purple;
+    background-color: #d9d9d9;
+    border-radius: 10px;
 
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
 }
 
-.item{
-    padding: 0.5em;
+.cours{
+    overflow: hidden;
+    margin: 0.5em;
     background-color: #fb7185;
-    font-weight: 700;
     color: #f1f5f9;
     border: 10px solid #e11d48;
     height: 200px;
+    border-radius: 20px;
+}
+
+.titrecours{
+    padding:5px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .titrecours{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: absolute;
+        background-color: rgba(90, 90, 90, 0.329);
+        color: #fff;
+    }
+
+}
+
+/* css pour les grand écrans (ordinateurs)*/
+@media only screen and (min-width: 1024px) {
+    
+    .titrecours {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(90, 90, 90, 0.329);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .cours:hover .titrecours {
+        transform: translateY(0);
+    }
+
 }
