@@ -1,0 +1,18 @@
+
+#coursContainer{
+    background-color: purple;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+}
+
+.item{
+    padding: 0.5em;
+    background-color: #fb7185;
+    font-weight: 700;
+    color: #f1f5f9;
+    border: 10px solid #e11d48;
+    height: 200px;
+}
