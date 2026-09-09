@@ -1,1 +1,1 @@
-## Projet d'apprentissage du vocabulaire japonais Grâce au FlashCards
+## Idée de site communautaire pour apprendre le japonais.
