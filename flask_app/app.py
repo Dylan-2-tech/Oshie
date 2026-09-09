@@ -5,7 +5,7 @@ import sqlite3
 
 app = Flask(__name__)
 app.secret_key = "5e3131acc05d3c14bc1863c863d566b857f91a32559aa835b9023209993cee78"
-
+# Bien sur il pour le déploiement il faut faire un appel à une variable d'environnement pour ne pas divulger la secret key.
 
 # Fonction qui retourne le nom utilisateur dans la session
 def is_logged_in():
