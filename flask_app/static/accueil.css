@@ -8,9 +8,9 @@
 }
 
 #accescoursbtn{
-    font-family: "PoppinsMedium";
     color: white;
     font-size: 25px;
+    font-weight: 700;
     border: 0px;
     margin-top: 10%;
     margin-bottom: 10%;

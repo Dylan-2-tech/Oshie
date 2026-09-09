@@ -1,0 +1,24 @@
+1ere étape:
+Récupérer les cours pour les stocker en sql
+
+2ème étape:
+le nettoyer, corriger les erreurs, trier et le rendre exploitable
+
+3 ème étape:
+Créer les cours:
+    - faire un script qui génére les pages webs à partir de la base de donnée
+        - Couteux en espace mémoire
+        - Il faut gérer les modifications des cartes
+        - Peut-etre plus rapide care la page sera déjà généré
+        - Plus il y a de cours plus c'est compliqué
+    - Créer les cartes directement en ligne à partir de la base de donnée
+        - Très peut couteux en place, il suffit de mettre à jour la base de données
+        - Peut-être plus long à charger car le serveurs devra envoyé le contenu de la bdd.
+        - économie d'espace en ayant qu'une seule page pour la carte qui sera utilisé factoriellement sur la bdd.
+        - pas de problème de quantité de cours.
+        - en gros c'est heja le top.
+
+4 éme étape:
+Connecter la base au site et utilisé les données dans les cartes
+
+

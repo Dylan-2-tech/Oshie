@@ -1,0 +1,44 @@
+
+-- Création de la table Cours, chaque ligne correspond à un vocabulaire
+CREATE TABLE Cours(
+    course_id INTEGER NOT NULL,
+    vocabulaire TEXT NOT NULL,
+    traduction TEXT NOT NULL,
+    description TEXT,
+    PRIMARY KEY (course_id, vocabulaire) 
+);
+
+-- Création de la table Names liant un cours et sont nom
+CREATE TABLE Names (
+    course_id INTEGER PRIMARY KEY, 
+    name TEXT UNIQUE NOT NULL
+);
+
+-- Création de la table cours_user liant un cours et un cours
+CREATE TABLE cours_user (
+    user_id INTEGER NOT NULL,
+    course_id INTEGER NOT NULL
+);
+
+-- Création de la table user représentant un utilisateur
+CREATE TABLE user (
+    user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_name TEXT UNIQUE NOT NULL, 
+    password TEXT
+);
+
+-- Création de la table Category
+Create table Category_cours(
+	course_id INTEGER NOT NULL,
+	category TEXT NOT NULL
+);
+
+-- Insertion de données dans la tables cours
+INSERT INTO Cours (vocabulaire, traduction, description) 
+VALUES ('こんにちは', 'Bonjour', 'Salutation japonaise');
+
+
+-- Insertion de données dans la table Category cours
+insert into Category_cours (course_id, category)
+VALUES (0,"");
+

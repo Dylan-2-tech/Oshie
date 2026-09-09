@@ -1,0 +1,70 @@
+
+#cours-div{
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(35, 35, 35);
+    border-radius: 20px;
+    height: 95vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 30px 30px 30px;
+    max-width: 1000px;
+}
+
+#card{
+    position: relative;
+    margin: auto;
+    background-image: url("../image/CarteOshie.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    max-width: 350px;
+    transition: transform 0.2s ease-in-out;
+}
+
+#imgCarte{
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+#vocab-div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.vocab{
+    font-size: 40px;
+}
+
+#main-div-cards{
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(35, 35, 35);
+    border-radius: 20px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 30px 30px 30px;
+    max-width: 1000px; 
+}
+
+#from-ajout{
+    max-width: 400px;
+    width: auto;
+}
+
+#form-ajout button{ 
+    max-width: 100px;
+    width: auto;
+}
+
+#table-cours{
+    
+}
+
+.checkboxes{
+    display:none;
+}

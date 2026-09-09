@@ -1,0 +1,8 @@
+Base de donnée contenant les cours.
+Créer la page des cours en fonctions des données
+Interface pour choisir les cours
+Comptes utilisateur/créateur pour s'entrainer sur les cours ou en créer.
+
+
+Structure de la base de données d'un cours:
+Une ligne <=> une carte => {text vocab, text trad, text desc}

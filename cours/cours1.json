@@ -1,0 +1,10 @@
+{
+	"Title": "Les formules de politesse",
+	"content": [
+		{"はい": "Oui"},
+		{"いいえ": "Non"},
+		{"お願いします": "S'il vous plaît"},
+		[{"ありがとう": "Merci"}, "ございます"],
+		[{"どういたしまして": ""}, ""]
+	]
+}

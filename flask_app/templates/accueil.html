@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='general.css') }}"> 
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logos/oshieLogo.png') }}">
+        
+        <title>Oshie</title>
+    </head>
+    <body>
+        <div id="main-div">
+
+            <img src="{{ url_for('static', filename='images/logos/oshieLogo.png') }}" alt="logo du site Oshie" id="logo">
+            
+            <h2 id="welcome-user">Bienvenue {{ session['user_name'] }}</h2>
+            
+            {% if session['user_name'] %}
+            <a id = "link" href="{{ url_for('logout') }}"><h3>Déconnexion</h3></a>
+            {% else %}
+                <a id = "link" href="{{ url_for('login') }}">Connexion</a>
+            {% endif %}
+            
+            <div id="accueil">
+                <h2 id="slogan">Apprenez le vocabulaire japonais grâce aux flashcards!</h2>
+                <p id="description">Oshie est un site permettant d'apprendre du vocabulaire japonais et d'être capable de s'en servir grâce à des exemples réels.</br>
+                Ce site est un projet personnel que je crée pendant mes études d'informatiques. 
+                </br></br>Merci à <a id="link" target="_blank" href="https://www.youtube.com/@coursdejaponais">Julien Fontanier</a> pour son accord à utiliser ses vidéos de cours sur le vocabulaire japonais.</br>
+                Grâce à mon projet, je pourrais apprendre le japonais d'une manière qui me plait et qui peut plaire à d'autres.</br></br>
+                Pensez à configurer le <a id="link" target="_blank" href="https://nihongo.uqam.ca/comment-installer-une-methode-de-saisie-japonaise-ime/">clavier Japonais</a></br></br>
+                Si cela vous intéresse, vous pouvez voir ce que je fais <a id="link" target="_blank" href="https://github.com/Dylan-2-tech">ici</a> sur mon github.</p>
+                <a href="{{ url_for('cours') }}" ><button id="accescoursbtn" type="button">VOIR COURS</button></a>
+            </div>
+        </div>
+    </body>
+</html>

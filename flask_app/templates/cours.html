@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='general.css') }}">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logos/oshieLogo.png') }}">
+     
+        <script type="text/javascript" src="{{ url_for('static', filename='js/cours.js') }}"></script>
+        <title>Cours</title>
+    </head>
+    <body>
+            
+        <div id="main-div">
+
+            <a href="{{ url_for('accueil') }} ">
+                <img src="{{ url_for('static', filename='images/logos/oshieLogo.png') }}" alt="logo du site Oshie" id="logo">
+            </a>
+            
+            <!--<h1 id="slogan">Tout les cours</h2>-->
+
+            <div class = "scrollmenu">
+                <button class="cours-tab" id="tout" onclick="loadCourses('tous')">Tous les cours</button>
+                <button class="cours-tab" id="initiaux" onclick="loadCourses('initiaux')">Cours Initiaux</button>
+                <button class="cours-tab" id="personnel" onclick="loadCourses('personnel')">Mes Cours</button>
+                <button class="cours-tab" id="partages" onclick="loadCourses('partage')">Cours Partagés</button>
+            </div>
+
+            <div id="coursContainer" data-url="{{ url_for('display_cours', course_id=0) }}">
+                {% for course in courses %}
+                <div class = "cours">
+                     <a class="linkCours"href="{{ url_for('display_cours', course_id=course['course_id']) }}">
+                        <div class="titrecours">
+                            <h3>{{ course['name'] }}</h3>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </body>
+</html>

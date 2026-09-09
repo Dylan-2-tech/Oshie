@@ -1,8 +1,15 @@
 
 @import url("accueil.css");
 @import url("pageCours.css");
+@import url("cours.css");
+@import url("login_signin.css");
 
-/* FONTS */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*
 @font-face {
     font-family: "PoppinsLight";
     src: url("../font/Poppins-Light.ttf");
@@ -11,12 +18,10 @@
     font-family: "PoppinsMedium";
     src: url("../font/Poppins-Medium.ttf");
 }
+*/
 
 body{
-    font-family: 'PoppinsLight';
     text-align: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     background-color: #ff6056;
 }
 
@@ -30,6 +35,12 @@ body{
     margin-right: auto;
     padding: 0px 30px 30px 30px;
     max-width: 1000px;
+}
+
+#welcome-user{
+    text-shadow: 0px 0px 4px black;
+    color: #cb2c20;
+    margin: 0px;
 }
 
 #link{
@@ -58,11 +69,15 @@ body{
 @media only screen and (max-width: 500px) {
     
     #logo{
-        height: 100px;
+        height: 80px;
     }
 
     #slogan{
-        font-size: 25px;
+        font-size: 20px;
+    }
+
+    #vocab-div{
+        transform: translate(-50%, -50%);
     }
 
 }

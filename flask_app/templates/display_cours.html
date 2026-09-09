@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='general.css') }}">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logos/oshieLogo.png') }}">
+        
+        <script type="text/javascript" src="{{ url_for('static', filename='js/flashcards.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/cours.js') }}"></script>
+
+        <title>{{ course_name }}</title>
+    </head>
+    <body>
+        <div id = "main-div-cards">
+         
+            <h1>{{ course_name }}</h1>
+            <form id="form-ajout" style="display:none;">
+                <input type="text" id="vocabulaire" placeholder="Vocabulaire" accept-charset="UTF-8" required>
+                <input type="text" id="traduction" placeholder="Traduction" accept-charset="UTF-8" required>
+                <input type="text" id="description-vocab" placeholder="Description" accept-charset="UTF-8" >
+                <button type="submit">Ajouter</button>
+            </form>
+            <table id="table-cours" border="1">
+                <thead>
+                    <tr>
+                        <th>Vocabulaire</th>
+                        <th>Traduction</th>
+                        <th>Description</th>
+                        <th class="action-col" style="display: none;">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in course_content %}
+                    <tr data-course-id="{{ row['course_id'] }}" data-vocabulaire="{{ row['vocabulaire'] }}">
+                        <td>{{ row['vocabulaire'] }}</td>
+                        <td>{{ row['traduction'] }}</td>
+                        <td>{{ row['description'] if row['description'] else 'Aucune' }}</td>
+                        <td class="action-cell" style="display: none;">
+                            <button class="delete-btn-row">Supprimer</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% if owner_id == session['user_id']%}
+                <button style="display: none;" id="delete-btn">Supprimer la sélection</button>
+                {% if cours_category == 'partage' %}
+                    <button id="unshare-btn">Vérouiller</button>
+                {% else %}
+                    <button id="share-btn">Partager</button>
+                {% endif %}
+
+                <button style="display: none;" id="finish-btn">Terminer</button> 
+                <button id="edit-btn">Modifier</button>
+                <button id="delete-cours-btn">Supprimer le cours</button>²
+            {% endif %}
+            <br>
+
+            <a id="link" href="{{ url_for('cours') }}">Revenir aux autres cours</a>
+        </div>
+    </body>
+</html>

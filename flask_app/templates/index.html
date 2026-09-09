@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='general.css') }}">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logos/oshieLogo.png') }}">
+
+        <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+        <title>Oshie</title>
+    </head>
+    <body>
+        
+        {% if show_alert %}
+            <script type="text/javascript">
+            
+                window.onload = function() {
+                    alert("{{ message }}")
+                };
+            </script>
+        {% endif %}
+        
+        <div id="main-div">
+            <img src="{{ url_for('static', filename='images/logos/oshieLogo.png') }}" alt="logo du site Oshie" id="logo">
+
+            <!-- Login Form -->
+            <div class="form-container" id="loginForm">
+                <h2>Connexion à Oshie</h2>
+
+                <form action="/" method="POST"> <!-- Action est une fonction dans l'app -->
+
+                    <label for="login-username">Nom d'utilisateur :</label>
+                    <input type="text" id="login-username" name="username" required>
+
+                    <label for="login-password">Mot de passe :</label>
+                    <input type="password" id="login-password" name="password" required>
+
+                    <button type="submit">Se connecter</button>
+
+                </form>
+
+                <span class="toggle-link" onclick="showSignup()">Pas encore inscrit ? S'inscrire</span>
+
+            </div>
+
+            <!-- Sign-Up Form -->
+            <div class="form-container" id="signupForm" style="display: none;"> <!-- Pas afficher au début -->
+                <h2>Inscription à Oshie</h2>
+
+                <form action="/signup" method="POST"> <!-- Action est une fonction dans l'app -->
+
+                    <label for="signup-username">Nom d'utilisateur :</label>
+                    <input type="text" id="signup-username" name="username" required>
+
+                    <label for="signup-password">Mot de passe :</label>
+                    <input type="password" id="signup-password" name="password" required>
+
+                    <button type="submit">S'inscrire</button>
+
+                </form>
+
+                <span class="toggle-link" onclick="showLogin()">Déjà un compte ? Se connecter</span>
+            </div>
+            
+        </div>
+    </body>
+</html>
